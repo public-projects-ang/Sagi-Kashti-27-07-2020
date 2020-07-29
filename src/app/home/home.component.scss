@@ -1,0 +1,11 @@
+#home-container {
+  background: #61CE17;
+  background: -moz-radial-gradient(center, #61CE17 0%, #B0FFD0 45%, #1EC574 100%);
+  background: -webkit-radial-gradient(center, #61CE17 0%, #B0FFD0 45%, #1EC574 100%);
+  background: radial-gradient(ellipse at center, #61CE17 0%, #B0FFD0 45%, #1EC574 100%);
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(34px, auto) 1fr;
+}
+
+

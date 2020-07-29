@@ -3,10 +3,17 @@ html,
 body {
   margin: 0;
   padding: 0;
-  border: 1px solid black;
-  height: 99vh;
+  // border: 1px solid black;
+  height: 100vh;
+  font-family: 'Ranchers', cursive;
+  // font-family: 'Caveat', cursive;
 }
 
 .row {
   padding: 5px;
+}
+.flex-center {
+  display:flex;
+  align-items: center;
+  justify-content: center;
 }

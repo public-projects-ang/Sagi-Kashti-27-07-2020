@@ -32,10 +32,22 @@ MIT
 @angular/core
 MIT
 
+@angular/forms
+MIT
+
 @angular/platform-browser
 MIT
 
 @angular/router
+MIT
+
+@ngrx/effects
+MIT
+
+@ngrx/store
+MIT
+
+@ngrx/store-devtools
 MIT
 
 core-js

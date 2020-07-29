@@ -1,6 +1,6 @@
 #app-container {
   display: grid;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: minmax(100px,auto) 1fr;
   background-color: blue;
   height: 100%;
 }
