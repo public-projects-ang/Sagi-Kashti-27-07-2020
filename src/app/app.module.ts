@@ -12,6 +12,9 @@ import { MainHeaderComponent } from './main-header/main-header.component';
 import {AutoCompleteModule} from 'primeng/autocomplete';
 import { MessageModule } from 'primeng/message';
 import {TabMenuModule} from 'primeng/tabmenu';
+import {KeyFilterModule} from 'primeng/keyfilter';
+import {ToggleButtonModule} from 'primeng/togglebutton';
+
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
@@ -40,6 +43,8 @@ import { SelectedWeatherComponent } from './selected-weather/selected-weather.co
     AppRoutingModule,
     AutoCompleteModule,
     HttpClientModule,
+    KeyFilterModule,
+    ToggleButtonModule,
     StoreModule.forRoot({ LocationState: locationsReducerFunc }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([LocationsEffects])

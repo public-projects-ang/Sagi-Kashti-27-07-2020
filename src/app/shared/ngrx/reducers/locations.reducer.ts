@@ -44,6 +44,12 @@ const locationsReducer = createReducer(
       ...state, selectedLocation:
         {...state.selectedLocation, details: payload.selectedLocation }
     });
+  }),
+  on(LocationActions.selectedWeatherLoadSuccess, (state, payload) => {
+    console.log('selectedWeatherLoadSuccess action YYYY @@@@@@@@@ =', payload); return ({
+      ...state, selectedLocation:
+        {...state.selectedLocation, currentWeather: payload.currentWeather[0]}
+    });
   })
 );
 

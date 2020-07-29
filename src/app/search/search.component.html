@@ -3,7 +3,7 @@
      [minLength]="1" placeholder="Search location" [dropdown]="true"
       [autoHighlight]="true" [emptyMessage]="'No results Found'"
       (onDropdownClick)="onDropdownClick($event.query)"
-      (onSelect)="onLocationSelect($event)">
+      (onSelect)="onLocationSelect($event)" pKeyFilter="alpha">
       <ng-template let-location pTemplate="item" >
           <div class="ui-helper-clearfix" style="border-bottom:1px solid #D5D5D5">
             {{location.LocalizedName}} , {{location.Country.LocalizedName}} , {{location.AdministrativeArea.ID}}

@@ -6,10 +6,16 @@ import { SearchService } from '../../services/search.service';
 import {Location} from '../../interfaces/location';
 import { Input } from '../../interfaces/input';
 import { WeatherService } from '../../services/weather.service';
+import { Weather } from '../../interfaces/weather';
 
 @Injectable()
 export class LocationsEffects {
-
+  constructor(
+    private actions$: Actions,
+    private actionsW$: Actions,
+    private searchService: SearchService,
+    private weatherService: WeatherService
+  ) {}
   loadSearch$ = createEffect(() => this.actions$.pipe(
     // tap(search => {
     //   console.log('[Search Load] Load Search Results search !!!!!!!!!!!!!!!!! =');
@@ -26,7 +32,7 @@ export class LocationsEffects {
       )
     )
   );
-  loadCurrentWeather$ = createEffect(() => this.actions$.pipe(
+  loadCurrentWeather$ = createEffect(() => this.actionsW$.pipe(
     tap(input => {
       console.log('[SelectedWeather Load]  Load Current Weather aaa input !!!!!!!!!!!!!!!!! =');
       console.log(input);
@@ -35,17 +41,13 @@ export class LocationsEffects {
     mergeMap(
       (input: {selectedLocation: Location}) => this.weatherService.getCurrentWeather(input.selectedLocation.Key)
       .pipe(
-        // tap(res => console.log('getResults res effect =', res)),
-        map((res) => ({ type: '[SelectedWeather API]  Update Current Weather', res } )),
+        tap(res => console.log('getCurrentWeather res effect =', res)),
+        map((currentWeather) => ({ type: '[SelectedWeather API]  Update Current Weather', currentWeather} )),
         catchError(() => EMPTY)
       )
       )
     )
   );
 
-  constructor(
-    private actions$: Actions,
-    private searchService: SearchService,
-    private weatherService: WeatherService
-  ) {}
+
 }

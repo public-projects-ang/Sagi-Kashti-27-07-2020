@@ -3,6 +3,7 @@ import { WeatherService } from '../shared/services/weather.service';
 import { Store, select } from '@ngrx/store';
 import {Location} from '../shared/interfaces/location';
 import { SelectedLocationState } from '../shared/interfaces/selected-location-state';
+import { Temperature } from '../shared/enum/temperature.enum';
 
 @Component({
   selector: 'app-selected-weather',
@@ -16,19 +17,21 @@ export class SelectedWeatherComponent implements OnInit {
       selectedLocation: SelectedLocationState
     }
   }>) { }
-  selectedLocation: Location;
+  selectedLocationState: SelectedLocationState;
+  isMetricTemp = true;
+  temperature: Temperature = Temperature.Metric;
   ngOnInit(): void {
     this.store.pipe(select('LocationState', 'selectedLocation')).subscribe(
-      (selectedLocation: SelectedLocationState) => {
-        console.log(' selectedLocation = ');
-        console.log(selectedLocation);
+      (selectedLocationState: SelectedLocationState) => {
+        console.log(' selectedLocationState = ');
+        console.log(selectedLocationState);
         // this.weatherService.getCurrentWeather(selectedLocation.Key).subscribe(
         //   res => {
         //     console.log(' res = ');
         //     console.log(res);
         //   }
         // );
-        // this.selectedLocation = selectedLocation;
+        this.selectedLocationState = selectedLocationState;
       }
     );
 
