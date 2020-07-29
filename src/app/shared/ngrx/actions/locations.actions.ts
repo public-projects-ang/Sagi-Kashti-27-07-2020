@@ -1,4 +1,5 @@
 import { createAction, props } from '@ngrx/store';
+import { Location } from '../../interfaces/location';
 
 
 export const searchLoad = createAction(
@@ -6,6 +7,15 @@ export const searchLoad = createAction(
   props<{ input: string }>());
 
 
-export const numbersLoadedSuccess = createAction(
-    '[Search API]  Update Search Results',
-    props<{ suggestions: any[] }>());
+export const searchLoadSuccess = createAction(
+  '[Search API]  Update Search Results',
+  props<{ suggestions: any[] }>());
+
+
+export const selectedWeatherLoad = createAction(
+  '[SelectedWeather Load]  Load Current Weather',
+  props<{ selectedLocation: Location }>());
+
+export const selectedWeatherLoadSuccess = createAction(
+  '[SelectedWeather API]  Update Current Weather',
+  props<{ selectedLocation: Location }>());

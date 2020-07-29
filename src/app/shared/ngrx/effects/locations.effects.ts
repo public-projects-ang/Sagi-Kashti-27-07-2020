@@ -5,11 +5,12 @@ import { map, mergeMap, catchError, tap, take } from 'rxjs/operators';
 import { SearchService } from '../../services/search.service';
 import {Location} from '../../interfaces/location';
 import { Input } from '../../interfaces/input';
+import { WeatherService } from '../../services/weather.service';
 
 @Injectable()
 export class LocationsEffects {
 
-  loadNumbers$ = createEffect(() => this.actions$.pipe(
+  loadSearch$ = createEffect(() => this.actions$.pipe(
     // tap(search => {
     //   console.log('[Search Load] Load Search Results search !!!!!!!!!!!!!!!!! =');
     //   console.log(search);
@@ -25,9 +26,26 @@ export class LocationsEffects {
       )
     )
   );
+  loadCurrentWeather$ = createEffect(() => this.actions$.pipe(
+    tap(input => {
+      console.log('[SelectedWeather Load]  Load Current Weather aaa input !!!!!!!!!!!!!!!!! =');
+      console.log(input);
+    }),
+    ofType('[SelectedWeather Load]  Load Current Weather'),
+    mergeMap(
+      (input: {selectedLocation: Location}) => this.weatherService.getCurrentWeather(input.selectedLocation.Key)
+      .pipe(
+        // tap(res => console.log('getResults res effect =', res)),
+        map((res) => ({ type: '[SelectedWeather API]  Update Current Weather', res } )),
+        catchError(() => EMPTY)
+      )
+      )
+    )
+  );
 
   constructor(
     private actions$: Actions,
-    private searchService: SearchService
+    private searchService: SearchService,
+    private weatherService: WeatherService
   ) {}
 }

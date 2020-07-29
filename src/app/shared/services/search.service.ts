@@ -9,7 +9,7 @@ import {map, tap} from 'rxjs/operators';
 export class SearchService {
   // 5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx
   // curl -X GET "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx&q=jerusal"
-  key = '5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx';
+  key = 'DPU6SrzqEqDpmhqxFqECfj6a6O6GIzmI';
   mockListResB: Location[] = [
     {
       Version: 1,
