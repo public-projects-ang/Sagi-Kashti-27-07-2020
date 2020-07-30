@@ -1,20 +1,39 @@
 <div id="selected-weather-container" class="row" *ngIf="selectedLocationState.currentWeather">
-  <p>selected-weather works!</p>
   <!--  selectedLocationState = {{selectedLocationState|json}} -->
-  <p-toggleButton [(ngModel)]="isMetricTemp" onLabel="C" offLabel="F"></p-toggleButton>
-  {{selectedLocationState.details.LocalizedName}}
-  <ng-template #metric>
-  {{selectedLocationState.currentWeather.Temperature.Metric.Unit}}
-  {{selectedLocationState.currentWeather.Temperature.Metric.Value}}
-</ng-template>
-  <ng-template #imperial>
-  {{selectedLocationState.currentWeather.Temperature.Imperial.Unit}}
-  {{selectedLocationState.currentWeather.Temperature.Imperial.Value}}
-</ng-template>
+  <div id="selected-weather-header" class="flex-center row">
+    <div id="icon">
+      <div><img title="{{ selectedLocationState.currentWeather.WeatherText }}" alt=" weather icon"
+          src="./assets/{{selectedLocationState.currentWeather.WeatherIcon}}-s.png" />
+      </div>
+      <div>
+        <div>
+          <p-toggleButton [(ngModel)]="isMetricTemp" onLabel="C" offLabel="F" styleClass="rounded-toggle-button">
+          </p-toggleButton>
+        </div>
+        <div *ngIf="isMetricTemp; then metric; else imperial"></div>
+      </div>
+    </div>
+    <div id="list-button" >
+      list button
 
-  <div *ngIf="isMetricTemp then metric;else imperial">
-
+    </div>
   </div>
-
-  <img title="{{selectedLocationState.currentWeather.WeatherText}}" alt=" weather icon" src="./assets/{{selectedLocationState.currentWeather.WeatherIcon}}-s.png">
+  <div class="light-text row text-center">
+    <h1><b>{{selectedLocationState.details.LocalizedName}}</b></h1>
+    <h2><b>{{selectedLocationState.currentWeather.WeatherText}}</b></h2>
+    <div><img title="{{ selectedLocationState.currentWeather.WeatherText }}" alt=" weather icon"
+      src="./assets/{{selectedLocationState.currentWeather.WeatherIcon}}-s.png" />
+  </div>
+  </div>
+  <div>
+    forecast
+  </div>
+  <ng-template #metric>
+    <!-- {{ selectedLocationState.currentWeather.Temperature.Metric.Unit }} -->
+     {{ selectedLocationState.currentWeather.Temperature.Metric.Value }} &#8451;
+  </ng-template>
+  <ng-template #imperial>
+    <!-- {{ selectedLocationState.currentWeather.Temperature.Imperial.Unit }} -->
+    {{ selectedLocationState.currentWeather.Temperature.Imperial.Value }} &#8457;
+  </ng-template>
 </div>

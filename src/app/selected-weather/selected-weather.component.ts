@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../shared/services/weather.service';
 import { Store, select } from '@ngrx/store';
-import {Location} from '../shared/interfaces/location';
 import { SelectedLocationState } from '../shared/interfaces/selected-location-state';
-import { Temperature } from '../shared/enum/temperature.enum';
 
 @Component({
   selector: 'app-selected-weather',
@@ -19,7 +17,6 @@ export class SelectedWeatherComponent implements OnInit {
   }>) { }
   selectedLocationState: SelectedLocationState;
   isMetricTemp = true;
-  temperature: Temperature = Temperature.Metric;
   ngOnInit(): void {
     this.store.pipe(select('LocationState', 'selectedLocation')).subscribe(
       (selectedLocationState: SelectedLocationState) => {
