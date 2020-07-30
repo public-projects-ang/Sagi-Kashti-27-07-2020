@@ -14,6 +14,7 @@ import { MessageModule } from 'primeng/message';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {KeyFilterModule} from 'primeng/keyfilter';
 import {ToggleButtonModule} from 'primeng/togglebutton';
+import { CardModule, } from 'primeng/card';
 
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
@@ -24,6 +25,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { locationsReducerFunc } from './shared/ngrx/reducers/locations.reducer';
 import { LocationsEffects } from './shared/ngrx/effects/locations.effects';
 import { SelectedWeatherComponent } from './selected-weather/selected-weather.component';
+import { ForecastComponent } from './forecast/forecast.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,9 @@ import { SelectedWeatherComponent } from './selected-weather/selected-weather.co
     FavoritesComponent,
     MainHeaderComponent,
     SearchComponent,
-    SelectedWeatherComponent
+    SelectedWeatherComponent,
+    ForecastComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +50,7 @@ import { SelectedWeatherComponent } from './selected-weather/selected-weather.co
     HttpClientModule,
     KeyFilterModule,
     ToggleButtonModule,
+    CardModule,
     StoreModule.forRoot({ LocationState: locationsReducerFunc }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([LocationsEffects])

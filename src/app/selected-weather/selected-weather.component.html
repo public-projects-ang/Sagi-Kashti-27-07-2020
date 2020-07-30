@@ -1,3 +1,12 @@
+<ng-template #metric>
+  <!-- {{ selectedLocationState.currentWeather.Temperature.Metric.Unit }} -->
+  {{ selectedLocationState.currentWeather.Temperature.Metric.Value }} &#8451;
+</ng-template>
+<ng-template #imperial>
+  <!-- {{ selectedLocationState.currentWeather.Temperature.Imperial.Unit }} -->
+  {{ selectedLocationState.currentWeather.Temperature.Imperial.Value }} &#8457;
+</ng-template>
+
 <div id="selected-weather-container" class="row" *ngIf="selectedLocationState.currentWeather">
   <!--  selectedLocationState = {{selectedLocationState|json}} -->
   <div id="selected-weather-header" class="flex-center row">
@@ -13,27 +22,21 @@
         <div *ngIf="isMetricTemp; then metric; else imperial"></div>
       </div>
     </div>
-    <div id="list-button" >
-      list button
-
+    <div id="list-button">
+      <p-toggleButton [(ngModel)]="isFavorite" onLabel="Add to favorite " offLabel="Remove from favorite "
+      onIcon="pi pi-heart" offIcon="pi pi-times" iconPos="right">
+      </p-toggleButton>
     </div>
   </div>
   <div class="light-text row text-center">
     <h1><b>{{selectedLocationState.details.LocalizedName}}</b></h1>
     <h2><b>{{selectedLocationState.currentWeather.WeatherText}}</b></h2>
     <div><img title="{{ selectedLocationState.currentWeather.WeatherText }}" alt=" weather icon"
-      src="./assets/{{selectedLocationState.currentWeather.WeatherIcon}}-s.png" />
-  </div>
+        src="./assets/{{selectedLocationState.currentWeather.WeatherIcon}}-s.png" />
+    </div>
+    <div *ngIf="isMetricTemp; then metric; else imperial"></div>
   </div>
   <div>
-    forecast
+    <app-forecast></app-forecast>
   </div>
-  <ng-template #metric>
-    <!-- {{ selectedLocationState.currentWeather.Temperature.Metric.Unit }} -->
-     {{ selectedLocationState.currentWeather.Temperature.Metric.Value }} &#8451;
-  </ng-template>
-  <ng-template #imperial>
-    <!-- {{ selectedLocationState.currentWeather.Temperature.Imperial.Unit }} -->
-    {{ selectedLocationState.currentWeather.Temperature.Imperial.Value }} &#8457;
-  </ng-template>
 </div>

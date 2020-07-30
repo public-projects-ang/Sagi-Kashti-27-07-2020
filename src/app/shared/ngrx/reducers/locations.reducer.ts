@@ -30,7 +30,7 @@ export const initialState: LocationState = {
       }
     },
     currentWeather: null,
-    forecast: []
+    forecast: null
   }
 };
 
@@ -49,6 +49,12 @@ const locationsReducer = createReducer(
     console.log('selectedWeatherLoadSuccess action YYYY @@@@@@@@@ =', payload); return ({
       ...state, selectedLocation:
         {...state.selectedLocation, currentWeather: payload.currentWeather[0]}
+    });
+  }),
+  on(LocationActions.selectedWeatherLoadForecastSuccess, (state, payload) => {
+    console.log('selectedWeatherLoadForecastSuccess action KKK #### =', payload); return ({
+      ...state, selectedLocation:
+        {...state.selectedLocation, forecast: payload.forecast}
     });
   })
 );

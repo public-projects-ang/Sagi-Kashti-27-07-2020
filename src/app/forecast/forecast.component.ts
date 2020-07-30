@@ -1,27 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../shared/services/weather.service';
-import { Store, select } from '@ngrx/store';
 import { SelectedLocationState } from '../shared/interfaces/selected-location-state';
+import { Store, select } from '@ngrx/store';
 
 @Component({
-  selector: 'app-selected-weather',
-  templateUrl: './selected-weather.component.html',
-  styleUrls: ['./selected-weather.component.scss']
+  selector: 'app-forecast',
+  templateUrl: './forecast.component.html',
+  styleUrls: ['./forecast.component.scss']
 })
-export class SelectedWeatherComponent implements OnInit {
+export class ForecastComponent implements OnInit {
 
-  constructor(private weatherService: WeatherService, private store: Store<{
+  selectedLocationState: SelectedLocationState;
+  constructor(private store: Store<{
     LocationState: {
       selectedLocation: SelectedLocationState
     }
   }>) { }
-  selectedLocationState: SelectedLocationState;
-  isMetricTemp = true;
-  isFavorite: boolean;
   ngOnInit(): void {
     this.store.pipe(select('LocationState', 'selectedLocation')).subscribe(
       (selectedLocationState: SelectedLocationState) => {
-        console.log(' selectedLocationState = ');
+        console.log('forecast selectedLocationState = ');
         console.log(selectedLocationState);
         // this.weatherService.getCurrentWeather(selectedLocation.Key).subscribe(
         //   res => {
@@ -32,7 +29,6 @@ export class SelectedWeatherComponent implements OnInit {
         this.selectedLocationState = selectedLocationState;
       }
     );
-
   }
 
 }

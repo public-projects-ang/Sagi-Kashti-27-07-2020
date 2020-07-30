@@ -3,6 +3,8 @@ import { of } from 'rxjs';
 import { HttpParams, HttpClient } from '@angular/common/http';
 import { tap } from 'rxjs/internal/operators/tap';
 import { Weather } from '../interfaces/weather';
+import { forecastRes } from '../../../assets/mocks/forecast-mock';
+import { Forecast } from '../interfaces/forecast';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +12,9 @@ import { Weather } from '../interfaces/weather';
 export class WeatherService {
   // 5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx
   // DPU6SrzqEqDpmhqxFqECfj6a6O6GIzmI
-  key = 'DPU6SrzqEqDpmhqxFqECfj6a6O6GIzmI';
-
+  // wRKjvZFhHa9EruIMEcDP445Y1BjOAAlz
+  key = '9VSapGOgUgtQisfD6e6lEcDGaFGzccMW';
+  forecastRes = forecastRes;
   mockWeather: Weather[] = [{
     EpochTime: 1596021720,
     HasPrecipitation: false,
@@ -42,6 +45,8 @@ export class WeatherService {
     // console.log(' getCurrentWeather()  a ');
     // console.log(' input = ');
     // console.log(location);
+    console.log(' this.forecastRes = ');
+    console.log(this.forecastRes);
     const params = new HttpParams().set('apikey', this.key);
     // tslint:disable-next-line: object-literal-shorthand
     // return this.http.get(`https://dataservice.accuweather.com/currentconditions/v1/${location}`, { params: params }).pipe(
@@ -53,5 +58,23 @@ export class WeatherService {
     // console.log(' this.mockListRes = ');
     // console.log(this.mockListRes);
     return of(this.mockWeather);
+  }
+  getForecast(location) {
+    console.log(' getForecast()  a ');
+    console.log(' location = ');
+    console.log(location);
+    let params = new HttpParams().set('apikey', this.key);
+    params = params.set('metric', 'true');
+    // tslint:disable-next-line: object-literal-shorthand
+    // return this.http.get(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location}`, { params: params }).pipe(
+    //   tap((res: Forecast) => {
+    //     console.log('getForecast res s = ');
+    //     console.log(res);
+    //   })
+    // );
+
+    // console.log(' this.forecastRes = ');
+    // console.log(this.forecastRes);
+    return of(this.forecastRes);
   }
 }

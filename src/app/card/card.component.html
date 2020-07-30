@@ -1,0 +1,17 @@
+<div id="card-container" class="flex-center">
+  <p-card
+     styleClass="ui-card-shadow ">
+    <p-header class="light-text flex-center">
+      <h1>{{dailyForecast.EpochDate * 1000 | date:'EEEE'}}</h1>
+    </p-header>
+    <div class="light-text flex-center">{{dailyForecast.EpochDate * 1000 | date:'longDate'}} </div>
+    <div class="light-text">
+      <div class="flex-center">{{dailyForecast.Temperature.Minimum.Value}} - {{dailyForecast.Temperature.Maximum.Value}} &#8451;</div>
+      <div class="flex-center"><b>Day :</b> {{ dailyForecast.Day.IconPhrase }}<img title="{{ dailyForecast.Day.IconPhrase }}"
+          alt="weather icon" src="./assets/{{dailyForecast.Day.Icon}}-s.png" /></div>
+      <div class="flex-center">
+        <b>Night:</b> {{ dailyForecast.Day.IconPhrase  }}<img title="{{ dailyForecast.Day.IconPhrase  }}"
+          alt="weather icon" src="./assets/{{dailyForecast.Day.Icon}}-s.png" /></div>
+    </div>
+  </p-card>
+</div>

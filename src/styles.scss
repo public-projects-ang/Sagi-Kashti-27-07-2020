@@ -22,7 +22,11 @@ body .rounded-toggle-button{
 }
 .light-text{
   font-family: 'Caveat', cursive;
+  font-weight: bold;
 }
 .text-center{
   text-align: center;
+}
+.ui-card{
+  border: 1px solid red !important;
 }

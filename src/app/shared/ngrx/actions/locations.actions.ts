@@ -1,6 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { Location } from '../../interfaces/location';
 import { Weather } from '../../interfaces/weather';
+import { Forecast } from '../../interfaces/forecast';
 
 
 export const searchLoad = createAction(
@@ -20,3 +21,8 @@ export const selectedWeatherLoad = createAction(
 export const selectedWeatherLoadSuccess = createAction(
   '[SelectedWeather API]  Update Current Weather',
   props<{ currentWeather: Weather }>());
+
+export const selectedWeatherLoadForecastSuccess = createAction(
+    '[SelectedWeather API]  Update Forecast',
+    props<{ forecast: Forecast }>());
+

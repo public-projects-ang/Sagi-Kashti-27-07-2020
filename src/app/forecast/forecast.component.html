@@ -1,0 +1,9 @@
+<span id="forecast-container" *ngIf="this.selectedLocationState.forecast">
+  <!-- this.selectedLocationState {{this.selectedLocationState.forecast|json}} -->
+  <span *ngFor="let dailyForecast of this.selectedLocationState.forecast.DailyForecasts; let i=index">
+      <!-- {{forecast|json}} -->
+      <ng-container>
+        <app-card [dailyForecast]="dailyForecast"></app-card>
+      </ng-container>
+  </span>
+</span>
