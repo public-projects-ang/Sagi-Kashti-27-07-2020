@@ -3,59 +3,65 @@ import * as LocationActions from '../actions/locations.actions';
 import { Location } from '../../interfaces/location';
 import { Weather } from '../../interfaces/weather';
 import { SelectedLocationState } from '../../interfaces/selected-location-state';
+import { Favorite } from '../../interfaces/favorite';
 
 export interface LocationState {
   selected: string;
   suggestions: Location[];
   selectedLocation: SelectedLocationState;
+  favorites: Favorite[];
 }
 
 export const initialState: LocationState = {
   selected: null,
   suggestions: [],
   selectedLocation: {
-    details: {
-      Version: 1,
-      Key: '229017',
-      Type: 'City',
-      Rank: 75,
-      LocalizedName: 'Londokomanana',
-      Country: {
-        ID: 'MG',
-        LocalizedName: 'Madagascar'
-      },
-      AdministrativeArea: {
-        ID: 'M',
-        LocalizedName: 'Mahajanga'
-      }
-    },
+    details: null,
     currentWeather: null,
-    forecast: null
-  }
+    forecast: null,
+  },
+  favorites: []
 };
 
 const locationsReducer = createReducer(
   initialState,
   // tslint:disable-next-line: max-line-length
-  on(LocationActions.searchLoad, (state, payload) => { console.log('searchLoad action XXXXXX @@@@@@@@@ =', payload); return ({ ...state, selected: payload.input }); }),
-  on(LocationActions.searchLoadSuccess, (state, payload) => { console.log('searchLoadSuccess action YYYY @@@@@@@@@ =', payload); return ({ ...state, suggestions: payload.suggestions }); }),
+  on(LocationActions.searchLoad, (state, payload) => { return ({ ...state, selected: payload.input }); }),
+  on(LocationActions.searchLoadSuccess, (state, payload) => { return ({ ...state, suggestions: payload.suggestions }); }),
   on(LocationActions.selectedWeatherLoad, (state, payload) => {
-    console.log('selectedWeatherLoad action YYYY @@@@@@@@@ =', payload); return ({
+    return ({
       ...state, selectedLocation:
-        {...state.selectedLocation, details: payload.selectedLocation }
+        { ...state.selectedLocation, details: payload.selectedLocation }
     });
   }),
   on(LocationActions.selectedWeatherLoadSuccess, (state, payload) => {
-    console.log('selectedWeatherLoadSuccess action YYYY @@@@@@@@@ =', payload); return ({
+    return ({
       ...state, selectedLocation:
-        {...state.selectedLocation, currentWeather: payload.currentWeather[0]}
+        { ...state.selectedLocation, currentWeather: payload.currentWeather[0] }
     });
   }),
   on(LocationActions.selectedWeatherLoadForecastSuccess, (state, payload) => {
-    console.log('selectedWeatherLoadForecastSuccess action KKK #### =', payload); return ({
+    return ({
       ...state, selectedLocation:
-        {...state.selectedLocation, forecast: payload.forecast}
+        { ...state.selectedLocation, forecast: payload.forecast }
     });
+  }),
+  on(LocationActions.addFavorite, (state, payload) => {
+    const favoritesTmp = state.favorites.map(elem => elem);
+    favoritesTmp.push(payload.favorite);
+    return (
+      {
+        ...state, favorites: favoritesTmp
+      }
+    );
+  }),
+  on(LocationActions.removeFavorite, (state, payload) => {
+    const favoritesTmp = state.favorites.filter(elem => elem.location.Key !== payload.favoriteKey);
+    return (
+      {
+        ...state, favorites: favoritesTmp
+      }
+    );
   })
 );
 

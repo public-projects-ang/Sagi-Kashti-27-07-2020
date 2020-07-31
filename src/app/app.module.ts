@@ -27,6 +27,7 @@ import { LocationsEffects } from './shared/ngrx/effects/locations.effects';
 import { SelectedWeatherComponent } from './selected-weather/selected-weather.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { CardComponent } from './card/card.component';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CardComponent } from './card/card.component';
     HttpClientModule,
     KeyFilterModule,
     ToggleButtonModule,
+    ButtonModule,
     CardModule,
     StoreModule.forRoot({ LocationState: locationsReducerFunc }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),

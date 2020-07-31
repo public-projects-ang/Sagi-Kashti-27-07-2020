@@ -1,14 +1,11 @@
 <ng-template #metric>
-  <!-- {{ selectedLocationState.currentWeather.Temperature.Metric.Unit }} -->
   {{ selectedLocationState.currentWeather.Temperature.Metric.Value }} &#8451;
 </ng-template>
 <ng-template #imperial>
-  <!-- {{ selectedLocationState.currentWeather.Temperature.Imperial.Unit }} -->
   {{ selectedLocationState.currentWeather.Temperature.Imperial.Value }} &#8457;
 </ng-template>
 
-<div id="selected-weather-container" class="row" *ngIf="selectedLocationState.currentWeather">
-  <!--  selectedLocationState = {{selectedLocationState|json}} -->
+<div id="selected-weather-container" class="row animated zoomIn" *ngIf="selectedLocationState&&selectedLocationState.currentWeather&&this.selectedLocationState.details">
   <div id="selected-weather-header" class="flex-center row">
     <div id="icon">
       <div><img title="{{ selectedLocationState.currentWeather.WeatherText }}" alt=" weather icon"
@@ -23,9 +20,12 @@
       </div>
     </div>
     <div id="list-button">
-      <p-toggleButton [(ngModel)]="isFavorite" onLabel="Add to favorite " offLabel="Remove from favorite "
-      onIcon="pi pi-heart" offIcon="pi pi-times" iconPos="right">
-      </p-toggleButton>
+      <button *ngIf="isFavorite" pButton (click)="removeFavorite()" type="button" label="Remove from favorites"
+      class="ui-button-rounded ui-button-danger"
+      icon="pi pi-times" iconPos="right" ></button>
+      <button *ngIf="!isFavorite" pButton (click)="addFavorite()" type="button" label="Add to Favorites"
+      class="ui-button-rounded ui-button-success"
+      icon="pi pi-heart" iconPos="right"></button>
     </div>
   </div>
   <div class="light-text row text-center">
@@ -36,7 +36,7 @@
     </div>
     <div *ngIf="isMetricTemp; then metric; else imperial"></div>
   </div>
-  <div>
+  <div >
     <app-forecast></app-forecast>
   </div>
 </div>
