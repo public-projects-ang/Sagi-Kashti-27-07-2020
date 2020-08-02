@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "ng build --prod=true --outputPath=docs --baseHref=https://public-projects-ang.github.io/Sagi-Kashti-27-07-2020/"
+    "deploy": "ng deploy --base-href=https://public-projects-ang.github.io/Sagi-Kashti-27-07-2020/",
+    "build-git": "ng build --prod=true --outputPath=docs --baseHref=https://public-projects-ang.github.io/Sagi-Kashti-27-07-2020/"
   },
   "private": true,
   "dependencies": {

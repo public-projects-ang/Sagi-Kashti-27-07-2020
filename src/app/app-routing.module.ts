@@ -12,7 +12,7 @@ const routes: Routes = [
     path: 'favorites', component: FavoritesComponent
   },
   {
-    path: '**', component: HomeComponent
+    path: '**', redirectTo: 'home'
   }
 ];
 
