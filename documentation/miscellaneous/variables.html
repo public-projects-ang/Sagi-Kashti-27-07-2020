@@ -1,0 +1,1397 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>herolo-weather-finder documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">herolo-weather-finder documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   
+
+<ol class="breadcrumb">
+  <li>Miscellaneous</li>
+  <li>Variables</li>
+</ol>
+
+<section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#addFavorite" title="src/app/shared/ngrx/actions/locations.actions.ts"><b>addFavorite</b>&nbsp;&nbsp;&nbsp;(src/.../locations.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#context" title="src/test.ts"><b>context</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.prod.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.prod.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts"><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#forecastRes" title="docs/assets/mocks/forecast-mock.ts"><b>forecastRes</b>&nbsp;&nbsp;&nbsp;(docs/.../forecast-mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#forecastRes" title="src/assets/mocks/forecast-mock.ts"><b>forecastRes</b>&nbsp;&nbsp;&nbsp;(src/.../forecast-mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#initialState" title="src/app/shared/ngrx/reducers/locations.reducer.ts"><b>initialState</b>&nbsp;&nbsp;&nbsp;(src/.../locations.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#locationsReducer" title="src/app/shared/ngrx/reducers/locations.reducer.ts"><b>locationsReducer</b>&nbsp;&nbsp;&nbsp;(src/.../locations.reducer.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#removeFavorite" title="src/app/shared/ngrx/actions/locations.actions.ts"><b>removeFavorite</b>&nbsp;&nbsp;&nbsp;(src/.../locations.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#require" title="src/test.ts"><b>require</b>&nbsp;&nbsp;&nbsp;(src/.../test.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#searchLoad" title="src/app/shared/ngrx/actions/locations.actions.ts"><b>searchLoad</b>&nbsp;&nbsp;&nbsp;(src/.../locations.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#searchLoadSuccess" title="src/app/shared/ngrx/actions/locations.actions.ts"><b>searchLoadSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../locations.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectedWeatherLoad" title="src/app/shared/ngrx/actions/locations.actions.ts"><b>selectedWeatherLoad</b>&nbsp;&nbsp;&nbsp;(src/.../locations.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectedWeatherLoadForecastSuccess" title="src/app/shared/ngrx/actions/locations.actions.ts"><b>selectedWeatherLoadForecastSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../locations.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#selectedWeatherLoadSuccess" title="src/app/shared/ngrx/actions/locations.actions.ts"><b>selectedWeatherLoadSuccess</b>&nbsp;&nbsp;&nbsp;(src/.../locations.actions.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#suggstionsMock" title="docs/assets/mocks/suggestions-mock.ts"><b>suggstionsMock</b>&nbsp;&nbsp;&nbsp;(docs/.../suggestions-mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#suggstionsMock" title="src/assets/mocks/suggestions-mock.ts"><b>suggstionsMock</b>&nbsp;&nbsp;&nbsp;(src/.../suggestions-mock.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#telAviv" title="src/assets/default-location.ts"><b>telAviv</b>&nbsp;&nbsp;&nbsp;(src/.../default-location.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#telAviv" title="docs/assets/default-location.ts"><b>telAviv</b>&nbsp;&nbsp;&nbsp;(docs/.../default-location.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/shared/ngrx/actions/locations.actions.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="addFavorite"></a>
+                        <span class="name">
+                            <b>
+                            addFavorite</b>
+                            <a href="#addFavorite"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[Favorite Add]  Add to Favorites&#x27;,
+  props&lt;{ favorite: Favorite }&gt;())</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="removeFavorite"></a>
+                        <span class="name">
+                            <b>
+                            removeFavorite</b>
+                            <a href="#removeFavorite"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[Favorite Remove]  Remove from Favorites&#x27;,
+  props&lt;{ favoriteKey: string }&gt;())</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchLoad"></a>
+                        <span class="name">
+                            <b>
+                            searchLoad</b>
+                            <a href="#searchLoad"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[Search Load] Load Search Results&#x27;,
+  props&lt;{ input: string }&gt;())</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchLoadSuccess"></a>
+                        <span class="name">
+                            <b>
+                            searchLoadSuccess</b>
+                            <a href="#searchLoadSuccess"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[Search API]  Update Search Results&#x27;,
+  props&lt;{ suggestions: any[] }&gt;())</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedWeatherLoad"></a>
+                        <span class="name">
+                            <b>
+                            selectedWeatherLoad</b>
+                            <a href="#selectedWeatherLoad"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[SelectedWeather Load]  Load Current Weather&#x27;,
+  props&lt;{ selectedLocation: Location }&gt;())</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedWeatherLoadForecastSuccess"></a>
+                        <span class="name">
+                            <b>
+                            selectedWeatherLoadForecastSuccess</b>
+                            <a href="#selectedWeatherLoadForecastSuccess"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[SelectedWeather API]  Update Forecast&#x27;,
+  props&lt;{ forecast: Forecast }&gt;())</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="selectedWeatherLoadSuccess"></a>
+                        <span class="name">
+                            <b>
+                            selectedWeatherLoadSuccess</b>
+                            <a href="#selectedWeatherLoadSuccess"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createAction(
+  &#x27;[SelectedWeather API]  Update Current Weather&#x27;,
+  props&lt;{ currentWeather: Weather }&gt;())</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/test.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="context"></a>
+                        <span class="name">
+                            <b>
+                            context</b>
+                            <a href="#context"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>require.context(&#x27;./&#x27;, true, /\.spec\.ts$/)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="require"></a>
+                        <span class="name">
+                            <b>
+                            require</b>
+                            <a href="#require"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>literal type</code>
+
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/environments/environment.prod.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="environment"></a>
+                        <span class="name">
+                            <b>
+                            environment</b>
+                            <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  production: true
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="environment"></a>
+                        <span class="name">
+                            <b>
+                            environment</b>
+                            <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  production: false
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>docs/assets/mocks/forecast-mock.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="forecastRes"></a>
+                        <span class="name">
+                            <b>
+                            forecastRes</b>
+                            <a href="#forecastRes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  Headline: {
+    EffectiveDate: &#x27;2020-08-01T08:00:00+03:00&#x27;,
+    EffectiveEpochDate: 1596258000,
+    Severity: 4,
+    Text: &#x27;Pleasant this weekend&#x27;,
+    Category: &#x27;mild&#x27;,
+    EndDate: null,
+    EndEpochDate: null,
+    MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/extended-weather-forecast/213225?unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+    Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+  },
+  DailyForecasts: [
+    {
+      Date: &#x27;2020-07-30T07:00:00+03:00&#x27;,
+      EpochDate: 1596081600,
+      Temperature: {
+        Minimum: {
+          Value: 20.8,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 33.3,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: &#x27;Clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;1&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;1&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    },
+    {
+      Date: &#x27;2020-07-31T07:00:00+03:00&#x27;,
+      EpochDate: 1596168000,
+      Temperature: {
+        Minimum: {
+          Value: 20.6,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 31.1,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: &#x27;Clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;2&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;2&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    },
+    {
+      Date: &#x27;2020-08-01T07:00:00+03:00&#x27;,
+      EpochDate: 1596254400,
+      Temperature: {
+        Minimum: {
+          Value: 19.2,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 30.4,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: &#x27;Clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;3&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;3&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    },
+    {
+      Date: &#x27;2020-08-02T07:00:00+03:00&#x27;,
+      EpochDate: 1596340800,
+      Temperature: {
+        Minimum: {
+          Value: 21.4,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 30.5,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: &#x27;Clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;4&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;4&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    },
+    {
+      Date: &#x27;2020-08-03T07:00:00+03:00&#x27;,
+      EpochDate: 1596427200,
+      Temperature: {
+        Minimum: {
+          Value: 19.5,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 29.6,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 34,
+        IconPhrase: &#x27;Mostly clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;5&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;5&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    }
+  ]
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/assets/mocks/forecast-mock.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="forecastRes"></a>
+                        <span class="name">
+                            <b>
+                            forecastRes</b>
+                            <a href="#forecastRes"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  Headline: {
+    EffectiveDate: &#x27;2020-08-01T08:00:00+03:00&#x27;,
+    EffectiveEpochDate: 1596258000,
+    Severity: 4,
+    Text: &#x27;Pleasant this weekend&#x27;,
+    Category: &#x27;mild&#x27;,
+    EndDate: null,
+    EndEpochDate: null,
+    MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/extended-weather-forecast/213225?unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+    Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+  },
+  DailyForecasts: [
+    {
+      Date: &#x27;2020-07-30T07:00:00+03:00&#x27;,
+      EpochDate: 1596081600,
+      Temperature: {
+        Minimum: {
+          Value: 20.8,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 33.3,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: &#x27;Clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;1&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;1&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    },
+    {
+      Date: &#x27;2020-07-31T07:00:00+03:00&#x27;,
+      EpochDate: 1596168000,
+      Temperature: {
+        Minimum: {
+          Value: 20.6,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 31.1,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: &#x27;Clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;2&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;2&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    },
+    {
+      Date: &#x27;2020-08-01T07:00:00+03:00&#x27;,
+      EpochDate: 1596254400,
+      Temperature: {
+        Minimum: {
+          Value: 19.2,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 30.4,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: &#x27;Clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;3&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;3&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    },
+    {
+      Date: &#x27;2020-08-02T07:00:00+03:00&#x27;,
+      EpochDate: 1596340800,
+      Temperature: {
+        Minimum: {
+          Value: 21.4,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 30.5,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 33,
+        IconPhrase: &#x27;Clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;4&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;4&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    },
+    {
+      Date: &#x27;2020-08-03T07:00:00+03:00&#x27;,
+      EpochDate: 1596427200,
+      Temperature: {
+        Minimum: {
+          Value: 19.5,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        },
+        Maximum: {
+          Value: 29.6,
+          Unit: &#x27;C&#x27;,
+          UnitType: 17
+        }
+      },
+      Day: {
+        Icon: 1,
+        IconPhrase: &#x27;Sunny&#x27;,
+        HasPrecipitation: false
+      },
+      Night: {
+        Icon: 34,
+        IconPhrase: &#x27;Mostly clear&#x27;,
+        HasPrecipitation: false
+      },
+      Sources: [
+        &#x27;AccuWeather&#x27;
+      ],
+      MobileLink: &#x27;http://m.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;5&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;,
+      Link: &#x27;http://www.accuweather.com/en/il/jerusalem/213225/daily-weather-forecast/213225?day&#x3D;5&amp;unit&#x3D;c&amp;lang&#x3D;en-us&#x27;
+    }
+  ]
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/app/shared/ngrx/reducers/locations.reducer.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialState"></a>
+                        <span class="name">
+                            <b>
+                            initialState</b>
+                            <a href="#initialState"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/LocationState.html" target="_self" >LocationState</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  selected: null,
+  suggestions: [],
+  selectedLocation: {
+    details: null,
+    currentWeather: null,
+    forecast: null,
+  },
+  favorites: []
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="locationsReducer"></a>
+                        <span class="name">
+                            <b>
+                            locationsReducer</b>
+                            <a href="#locationsReducer"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>createReducer(
+  initialState,
+  on(LocationActions.searchLoad, (state, payload) &#x3D;&gt; ({ ...state, selected: payload.input })),
+  on(LocationActions.searchLoadSuccess, (state, payload) &#x3D;&gt; ({ ...state, suggestions: payload.suggestions })),
+  on(LocationActions.selectedWeatherLoad, (state, payload) &#x3D;&gt; {
+    return ({
+      ...state, selectedLocation:
+        { ...state.selectedLocation, details: payload.selectedLocation }
+    });
+  }),
+  on(LocationActions.selectedWeatherLoadSuccess, (state, payload) &#x3D;&gt; {
+    return ({
+      ...state, selectedLocation:
+        { ...state.selectedLocation, currentWeather: payload.currentWeather[0] }
+    });
+  }),
+  on(LocationActions.selectedWeatherLoadForecastSuccess, (state, payload) &#x3D;&gt; {
+    return ({
+      ...state, selectedLocation:
+        { ...state.selectedLocation, forecast: payload.forecast }
+    });
+  }),
+  on(LocationActions.addFavorite, (state, payload) &#x3D;&gt; {
+    const favoritesTmp &#x3D; state.favorites.map(elem &#x3D;&gt; elem);
+    favoritesTmp.push(payload.favorite);
+    return (
+      {
+        ...state, favorites: favoritesTmp
+      }
+    );
+  }),
+  on(LocationActions.removeFavorite, (state, payload) &#x3D;&gt; {
+    const favoritesTmp &#x3D; state.favorites.filter(elem &#x3D;&gt; elem.location.Key !&#x3D;&#x3D; payload.favoriteKey);
+    return (
+      {
+        ...state, favorites: favoritesTmp
+      }
+    );
+  })
+)</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>docs/assets/mocks/suggestions-mock.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="suggstionsMock"></a>
+                        <span class="name">
+                            <b>
+                            suggstionsMock</b>
+                            <a href="#suggstionsMock"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Location.html" target="_self" >Location[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  {
+    Version: 1,
+    Key: &#x27;328328&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 10,
+    LocalizedName: &#x27;London&#x27;,
+    Country: {
+      ID: &#x27;GB&#x27;,
+      LocalizedName: &#x27;United Kingdom&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;LND&#x27;,
+      LocalizedName: &#x27;London&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;44945&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 35,
+    LocalizedName: &#x27;Londrina&#x27;,
+    Country: {
+      ID: &#x27;BR&#x27;,
+      LocalizedName: &#x27;Brazil&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;PR&#x27;,
+      LocalizedName: &#x27;Paraná&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;55489&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 35,
+    LocalizedName: &#x27;London&#x27;,
+    Country: {
+      ID: &#x27;CA&#x27;,
+      LocalizedName: &#x27;Canada&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;ON&#x27;,
+      LocalizedName: &#x27;Ontario&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;329139&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 41,
+    LocalizedName: &#x27;Londonderry asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd&#x27;,
+    Country: {
+      ID: &#x27;GB&#x27;,
+      LocalizedName: &#x27;United Kingdom&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;DRS&#x27;,
+      LocalizedName: &#x27;Derry City and Strabane&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;31679&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 63,
+    LocalizedName: &#x27;Londerzeel&#x27;,
+    Country: {
+      ID: &#x27;BE&#x27;,
+      LocalizedName: &#x27;Belgium&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;VBR&#x27;,
+      LocalizedName: &#x27;Flemish Brabant&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;2174076&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 65,
+    LocalizedName: &#x27;Londonderry afsascasfcasdf&#x27;,
+    Country: {
+      ID: &#x27;US&#x27;,
+      LocalizedName: &#x27;United States&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;NH&#x27;,
+      LocalizedName: &#x27;New Hampshire  asdasdasdasdasdasdasd&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;2551&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 75,
+    LocalizedName: &#x27;Londengo  adasdasdadasdas&#x27;,
+    Country: {
+      ID: &#x27;AO&#x27;,
+      LocalizedName: &#x27;Angola&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;BGU&#x27;,
+      LocalizedName: &#x27;Benguela   adfqawqwqqw&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;203973&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 75,
+    LocalizedName: &#x27;Londa&#x27;,
+    Country: {
+      ID: &#x27;IN&#x27;,
+      LocalizedName: &#x27;India&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;KA&#x27;,
+      LocalizedName: &#x27;Karnataka&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;229017&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 75,
+    LocalizedName: &#x27;Londokomanana&#x27;,
+    Country: {
+      ID: &#x27;MG&#x27;,
+      LocalizedName: &#x27;Madagascar&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;M&#x27;,
+      LocalizedName: &#x27;Mahajanga&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;258033&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 75,
+    LocalizedName: &#x27;Londol&#x27;,
+    Country: {
+      ID: &#x27;PG&#x27;,
+      LocalizedName: &#x27;Papua New Guinea&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;EPW&#x27;,
+      LocalizedName: &#x27;Enga&#x27;
+    }
+  }
+]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/assets/mocks/suggestions-mock.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="suggstionsMock"></a>
+                        <span class="name">
+                            <b>
+                            suggstionsMock</b>
+                            <a href="#suggstionsMock"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Location.html" target="_self" >Location[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[
+  {
+    Version: 1,
+    Key: &#x27;328328&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 10,
+    LocalizedName: &#x27;London&#x27;,
+    Country: {
+      ID: &#x27;GB&#x27;,
+      LocalizedName: &#x27;United Kingdom&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;LND&#x27;,
+      LocalizedName: &#x27;London&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;44945&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 35,
+    LocalizedName: &#x27;Londrina&#x27;,
+    Country: {
+      ID: &#x27;BR&#x27;,
+      LocalizedName: &#x27;Brazil&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;PR&#x27;,
+      LocalizedName: &#x27;Paraná&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;55489&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 35,
+    LocalizedName: &#x27;London&#x27;,
+    Country: {
+      ID: &#x27;CA&#x27;,
+      LocalizedName: &#x27;Canada&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;ON&#x27;,
+      LocalizedName: &#x27;Ontario&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;329139&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 41,
+    LocalizedName: &#x27;Londonderry asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd&#x27;,
+    Country: {
+      ID: &#x27;GB&#x27;,
+      LocalizedName: &#x27;United Kingdom&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;DRS&#x27;,
+      LocalizedName: &#x27;Derry City and Strabane&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;31679&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 63,
+    LocalizedName: &#x27;Londerzeel&#x27;,
+    Country: {
+      ID: &#x27;BE&#x27;,
+      LocalizedName: &#x27;Belgium&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;VBR&#x27;,
+      LocalizedName: &#x27;Flemish Brabant&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;2174076&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 65,
+    LocalizedName: &#x27;Londonderry afsascasfcasdf&#x27;,
+    Country: {
+      ID: &#x27;US&#x27;,
+      LocalizedName: &#x27;United States&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;NH&#x27;,
+      LocalizedName: &#x27;New Hampshire  asdasdasdasdasdasdasd&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;2551&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 75,
+    LocalizedName: &#x27;Londengo  adasdasdadasdas&#x27;,
+    Country: {
+      ID: &#x27;AO&#x27;,
+      LocalizedName: &#x27;Angola&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;BGU&#x27;,
+      LocalizedName: &#x27;Benguela   adfqawqwqqw&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;203973&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 75,
+    LocalizedName: &#x27;Londa&#x27;,
+    Country: {
+      ID: &#x27;IN&#x27;,
+      LocalizedName: &#x27;India&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;KA&#x27;,
+      LocalizedName: &#x27;Karnataka&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;229017&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 75,
+    LocalizedName: &#x27;Londokomanana&#x27;,
+    Country: {
+      ID: &#x27;MG&#x27;,
+      LocalizedName: &#x27;Madagascar&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;M&#x27;,
+      LocalizedName: &#x27;Mahajanga&#x27;
+    }
+  },
+  {
+    Version: 1,
+    Key: &#x27;258033&#x27;,
+    Type: &#x27;City&#x27;,
+    Rank: 75,
+    LocalizedName: &#x27;Londol&#x27;,
+    Country: {
+      ID: &#x27;PG&#x27;,
+      LocalizedName: &#x27;Papua New Guinea&#x27;
+    },
+    AdministrativeArea: {
+      ID: &#x27;EPW&#x27;,
+      LocalizedName: &#x27;Enga&#x27;
+    }
+  }
+]</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>src/assets/default-location.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="telAviv"></a>
+                        <span class="name">
+                            <b>
+                            telAviv</b>
+                            <a href="#telAviv"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Location.html" target="_self" >Location</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  AdministrativeArea: {
+    ID: &#x27;TA&#x27;,
+    LocalizedName: &#x27;Tel Aviv&#x27;,
+  },
+  Country: {
+    ID:  &#x27;IL&#x27;,
+    LocalizedName: &#x27;Israel&#x27;
+  },
+  Key: &#x27;215854&#x27;,
+  LocalizedName: &#x27;Tel Aviv&#x27;,
+  Rank: 31,
+  Type: &#x27;City&#x27;,
+  Version: 1
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+    <h3>docs/assets/default-location.ts</h3>
+    <section>
+    <h3></h3>        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="telAviv"></a>
+                        <span class="name">
+                            <b>
+                            telAviv</b>
+                            <a href="#telAviv"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Location.html" target="_self" >Location</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>{
+  AdministrativeArea: {
+    ID: &#x27;TA&#x27;,
+    LocalizedName: &#x27;Tel Aviv&#x27;,
+  },
+  Country: {
+    ID:  &#x27;IL&#x27;,
+    LocalizedName: &#x27;Israel&#x27;
+  },
+  Key: &#x27;215854&#x27;,
+  LocalizedName: &#x27;Tel Aviv&#x27;,
+  Rank: 31,
+  Type: &#x27;City&#x27;,
+  Version: 1
+}</code>
+                        </td>
+                    </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

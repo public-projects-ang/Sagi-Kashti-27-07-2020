@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "compodoc": "npx compodoc -p ./tsconfig.json",
     "deploy": "ng deploy --base-href=https://public-projects-ang.github.io/Sagi-Kashti-27-07-2020/",
     "build-git": "ng build --prod=true --outputPath=docs --baseHref=https://public-projects-ang.github.io/Sagi-Kashti-27-07-2020/"
   },
@@ -35,6 +36,7 @@
     "@angular-devkit/build-angular": "~0.901.11",
     "@angular/cli": "~9.1.11",
     "@angular/compiler-cli": "~9.1.12",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
