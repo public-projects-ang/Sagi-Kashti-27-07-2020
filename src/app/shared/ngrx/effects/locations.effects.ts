@@ -6,7 +6,6 @@ import { SearchService } from '../../services/search.service';
 import { Location } from '../../interfaces/location';
 import { Input } from '../../interfaces/input';
 import { WeatherService } from '../../services/weather.service';
-import { Weather } from '../../interfaces/weather';
 import { Forecast } from '../../interfaces/forecast';
 import { MessageService } from 'primeng/api';
 

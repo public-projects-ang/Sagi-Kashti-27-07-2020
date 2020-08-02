@@ -21,7 +21,7 @@ export class FavoritesComponent implements OnInit, OnDestroy {
   }>) { }
 
   ngOnInit(): void {
-    this.store.pipe(select('LocationState', 'favorites'))
+   this.subscription =  this.store.pipe(select('LocationState', 'favorites'))
       .pipe(tap(res => { console.log('SSSSSSSSSSSfavorites updated', res) })).subscribe(
         (favorites: Favorite[]) => {
           this.favorites = favorites;
