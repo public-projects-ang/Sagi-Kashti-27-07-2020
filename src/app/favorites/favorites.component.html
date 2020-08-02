@@ -1,1 +1,15 @@
-<p>favorites works!</p>
+<div id="favorites-container" class="row">
+  <h1 *ngIf="favorites" class="flex-center animated zoomIn">My favorite Weather Locations</h1>
+  <div>
+    <h2 *ngIf="favorites.length === 0"  class="flex-center animated wobble
+    ">No Favorite Locations</h2>
+    <ng-container *ngFor="let favorite of favorites; let i=index">
+      <div>
+        <app-favorite-card [favorite]="favorite"></app-favorite-card>
+       <!-- $$$$$$$$ {{favorite.location.LocalizedName}} , {{favorite.location.Country.LocalizedName}} , {{favorite.location.AdministrativeArea.ID}} -->
+      </div>
+    </ng-container>
+  </div>
+
+
+</div>

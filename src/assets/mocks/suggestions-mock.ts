@@ -50,7 +50,7 @@ export const suggstionsMock: Location[] = [
     Key: '329139',
     Type: 'City',
     Rank: 41,
-    LocalizedName: 'Londonderry',
+    LocalizedName: 'Londonderry asdasdasdasdasdasdasdasdasdasdasdasdasdasdasd',
     Country: {
       ID: 'GB',
       LocalizedName: 'United Kingdom'
@@ -80,14 +80,14 @@ export const suggstionsMock: Location[] = [
     Key: '2174076',
     Type: 'City',
     Rank: 65,
-    LocalizedName: 'Londonderry',
+    LocalizedName: 'Londonderry afsascasfcasdf',
     Country: {
       ID: 'US',
       LocalizedName: 'United States'
     },
     AdministrativeArea: {
       ID: 'NH',
-      LocalizedName: 'New Hampshire'
+      LocalizedName: 'New Hampshire  asdasdasdasdasdasdasd'
     }
   },
   {
@@ -95,14 +95,14 @@ export const suggstionsMock: Location[] = [
     Key: '2551',
     Type: 'City',
     Rank: 75,
-    LocalizedName: 'Londengo',
+    LocalizedName: 'Londengo  adasdasdadasdas',
     Country: {
       ID: 'AO',
       LocalizedName: 'Angola'
     },
     AdministrativeArea: {
       ID: 'BGU',
-      LocalizedName: 'Benguela'
+      LocalizedName: 'Benguela   adfqawqwqqw'
     }
   },
   {

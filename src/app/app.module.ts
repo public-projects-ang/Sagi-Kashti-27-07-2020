@@ -28,6 +28,7 @@ import { SelectedWeatherComponent } from './selected-weather/selected-weather.co
 import { ForecastComponent } from './forecast/forecast.component';
 import { CardComponent } from './card/card.component';
 import {ButtonModule} from 'primeng/button';
+import { FavoriteCardComponent } from './favorite-card/favorite-card.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {ButtonModule} from 'primeng/button';
     SearchComponent,
     SelectedWeatherComponent,
     ForecastComponent,
-    CardComponent
+    CardComponent,
+    FavoriteCardComponent
   ],
   imports: [
     BrowserModule,

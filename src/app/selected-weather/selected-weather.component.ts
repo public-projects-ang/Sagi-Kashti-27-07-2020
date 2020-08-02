@@ -21,15 +21,14 @@ export class SelectedWeatherComponent implements OnInit {
   }>) { }
   selectedLocationState: SelectedLocationState;
   isMetricTemp = true;
-  isFavorite: boolean;
+  isFavorite = false;
   favorites: Favorite[];
   ngOnInit(): void {
+    this.isFavorite = false;
     this.store.pipe(select('LocationState', 'selectedLocation')).subscribe(
       (selectedLocationState: SelectedLocationState) => {
-        console.log('DDDDDDDDDDDDDDDDDDDDDDDDD selectedLocationState = ');
-        console.log(selectedLocationState);
         this.selectedLocationState = selectedLocationState;
-        if(this.selectedLocationState.details&&this.selectedLocationState.currentWeather){
+        if (this.selectedLocationState.details && this.selectedLocationState.currentWeather && this.favorites) {
           const favorite = this.favorite();
           this.isFavorite = this.favoritesService.isfavoriteExist(favorite, this.favorites);
         }
@@ -37,8 +36,6 @@ export class SelectedWeatherComponent implements OnInit {
     );
     this.store.pipe(select('LocationState', 'favorites')).subscribe(
       (favorites: Favorite[]) => {
-        console.log('DDDDDDDDDDDDDDDDDDDDDDDDD favorites = ');
-        console.log(favorites);
         this.favorites = favorites;
         const favorite = this.favorite();
         this.isFavorite = this.favoritesService.isfavoriteExist(favorite, this.favorites);
@@ -46,11 +43,7 @@ export class SelectedWeatherComponent implements OnInit {
     );
   }
   addFavorite() {
-    console.log('DDDDDDDDDDDDDDDDDDDDDDDDD  addFavorite() = ');
     const favorite = this.favorite();
-    // if(this.selectedLocationState.details&&this.selectedLocationState.currentWeather){
-    //   this.isFavorite = this.favoritesService.isfavoriteExist(favorite, this.favorites);
-    // }
     if (this.selectedLocationState.details.Key && !this.favoritesService.isfavoriteExist(favorite, this.favorites)) {
       this.store.dispatch(addFavorite({ favorite }));
     } else {
@@ -58,7 +51,6 @@ export class SelectedWeatherComponent implements OnInit {
     }
   }
   removeFavorite() {
-    console.log('MMMMMMMMMMMMMMMM  removeFavorite()  ');
     const favorite = this.favorite();
     // if(this.selectedLocationState.details&&this.selectedLocationState.currentWeather){
     //   this.isFavorite = this.favoritesService.isfavoriteExist(favorite, this.favorites);

@@ -1,0 +1,14 @@
+#favorites-container {
+  background: #61CE17;
+  height: 100%;
+  padding-top: 15px;
+  background: -moz-radial-gradient(center, #46861b 0%, #B0FFD0 45%, #158f54 100%);
+  background: -webkit-radial-gradient(center, #46861b 0%, #B0FFD0 45%, #158f54 100%);
+  background: radial-gradient(ellipse at center, #46861b 0%, #B0FFD0 45%, #158f54 100%);
+  div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
