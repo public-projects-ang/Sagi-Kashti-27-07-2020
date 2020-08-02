@@ -12,7 +12,7 @@
  </p-header>
  <div class="light-text flex-center">{{favorite.weather.EpochTime * 1000 | date:'longDate'}} </div>
  <div class="light-text">
-   <div class="flex-center">{{favorite.weather.Temperature.Imperial.Value}} &#8451;</div>
+   <div class="flex-center">{{favorite.weather.Temperature.Metric.Value}} &#8451;</div>
    <div class="flex-center">{{ favorite.weather.WeatherText }}<img title="{{ favorite.weather.WeatherText }}"
        alt="weather icon" src="./assets/{{favorite.weather.WeatherIcon}}-s.png" /></div>
  </div>

@@ -12,7 +12,7 @@ export class SearchService {
   // 5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx
   // 9VSapGOgUgtQisfD6e6lEcDGaFGzccMW
   // curl -X GET "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx&q=jerusal"
-  key = '9VSapGOgUgtQisfD6e6lEcDGaFGzccMW';
+  key = 'wRKjvZFhHa9EruIMEcDP445Y1BjOAAlz';
   suggstionsMock: Location[] = suggstionsMock;
   constructor(private http: HttpClient) { }
   getResults(input: string) {

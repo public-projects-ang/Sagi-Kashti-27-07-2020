@@ -10,6 +10,7 @@ import { FavoritesComponent } from './favorites/favorites.component';
 import { MainHeaderComponent } from './main-header/main-header.component';
 
 import {AutoCompleteModule} from 'primeng/autocomplete';
+import {ToastModule} from 'primeng/toast';
 import { MessageModule } from 'primeng/message';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {KeyFilterModule} from 'primeng/keyfilter';
@@ -29,6 +30,7 @@ import { ForecastComponent } from './forecast/forecast.component';
 import { CardComponent } from './card/card.component';
 import {ButtonModule} from 'primeng/button';
 import { FavoriteCardComponent } from './favorite-card/favorite-card.component';
+import { MessageService } from 'primeng/api';
 
 @NgModule({
   declarations: [
@@ -57,7 +59,8 @@ import { FavoriteCardComponent } from './favorite-card/favorite-card.component';
     CardModule,
     StoreModule.forRoot({ LocationState: locationsReducerFunc }),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([LocationsEffects])
+    EffectsModule.forRoot([LocationsEffects, MessageService]),
+    ToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

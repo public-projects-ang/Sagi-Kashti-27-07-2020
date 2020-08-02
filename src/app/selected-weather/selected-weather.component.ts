@@ -1,16 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { SelectedLocationState } from '../shared/interfaces/selected-location-state';
 import { addFavorite, removeFavorite } from '../shared/ngrx/actions/locations.actions';
 import { FavoritesService } from '../shared/services/favorites.service';
 import { Favorite } from '../shared/interfaces/favorite';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-selected-weather',
   templateUrl: './selected-weather.component.html',
   styleUrls: ['./selected-weather.component.scss']
 })
-export class SelectedWeatherComponent implements OnInit {
+export class SelectedWeatherComponent implements OnInit, OnDestroy {
 
   constructor(private favoritesService: FavoritesService, private store: Store<{
     LocationState: {
@@ -22,9 +23,10 @@ export class SelectedWeatherComponent implements OnInit {
   isMetricTemp = true;
   isFavorite = false;
   favorites: Favorite[];
+  subscriptions: Subscription[] = [];
   ngOnInit(): void {
     this.isFavorite = false;
-    this.store.pipe(select('LocationState', 'selectedLocation')).subscribe(
+    this.subscriptions.push(this.store.pipe(select('LocationState', 'selectedLocation')).subscribe(
       (selectedLocationState: SelectedLocationState) => {
         this.selectedLocationState = selectedLocationState;
         if (this.selectedLocationState.details && this.selectedLocationState.currentWeather && this.favorites) {
@@ -32,14 +34,14 @@ export class SelectedWeatherComponent implements OnInit {
           this.isFavorite = this.favoritesService.isfavoriteExist(favorite, this.favorites);
         }
       }
-    );
-    this.store.pipe(select('LocationState', 'favorites')).subscribe(
+    ));
+    this.subscriptions.push(this.store.pipe(select('LocationState', 'favorites')).subscribe(
       (favorites: Favorite[]) => {
         this.favorites = favorites;
         const favorite = this.favorite();
         this.isFavorite = this.favoritesService.isfavoriteExist(favorite, this.favorites);
       }
-    );
+    ));
   }
   addFavorite() {
     const favorite = this.favorite();
@@ -66,6 +68,9 @@ export class SelectedWeatherComponent implements OnInit {
       weather: this.selectedLocationState.currentWeather
     };
     return favorite;
+  }
+  ngOnDestroy(){
+    this.subscriptions.forEach((subscription) => subscription.unsubscribe());
   }
 
 }

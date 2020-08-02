@@ -13,7 +13,7 @@ export class WeatherService {
   // 5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx
   // DPU6SrzqEqDpmhqxFqECfj6a6O6GIzmI
   // wRKjvZFhHa9EruIMEcDP445Y1BjOAAlz
-  key = '9VSapGOgUgtQisfD6e6lEcDGaFGzccMW';
+  key = 'wRKjvZFhHa9EruIMEcDP445Y1BjOAAlz';
   forecastRes = forecastRes;
   mockWeather: Weather[] = [{
     EpochTime: 1596021720,

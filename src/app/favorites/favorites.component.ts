@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Favorite } from '../shared/interfaces/favorite';
 import { select, Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 
 @Component({
@@ -9,9 +9,10 @@ import { tap, map } from 'rxjs/operators';
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss']
 })
-export class FavoritesComponent implements OnInit {
+export class FavoritesComponent implements OnInit, OnDestroy {
 
   favorites: Favorite[];
+  subscription: Subscription;
   constructor(private store: Store<{
     LocationState: {
       // selectedLocation: SelectedLocationState,
@@ -20,18 +21,15 @@ export class FavoritesComponent implements OnInit {
   }>) { }
 
   ngOnInit(): void {
-   this.store.pipe(select('LocationState', 'favorites'))
-    .pipe(tap(res=> {console.log('SSSSSSSSSSSfavorites updated',res)})).subscribe(
-      (favorites: Favorite[]) => {
-        this.favorites = favorites;
-      }
-    );
-    // .subscribe(
-    //   (favorites: Favorite[]) => {
-    //     console.log(' favorites Comp = ');
-    //     console.log(favorites);
-    //   }
-    // );
+    this.store.pipe(select('LocationState', 'favorites'))
+      .pipe(tap(res => { console.log('SSSSSSSSSSSfavorites updated', res) })).subscribe(
+        (favorites: Favorite[]) => {
+          this.favorites = favorites;
+        }
+      );
+  }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

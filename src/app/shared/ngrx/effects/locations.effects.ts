@@ -8,6 +8,7 @@ import { Input } from '../../interfaces/input';
 import { WeatherService } from '../../services/weather.service';
 import { Weather } from '../../interfaces/weather';
 import { Forecast } from '../../interfaces/forecast';
+import { MessageService } from 'primeng/api';
 
 @Injectable()
 export class LocationsEffects {
@@ -15,7 +16,8 @@ export class LocationsEffects {
     private actions$: Actions,
     private actionsW$: Actions,
     private searchService: SearchService,
-    private weatherService: WeatherService
+    private weatherService: WeatherService,
+    private messageService: MessageService
   ) { }
   loadSearch$ = createEffect(() => this.actions$.pipe(
     // tap(search => {
@@ -26,9 +28,19 @@ export class LocationsEffects {
     mergeMap(
       (search: Input) => this.searchService.getResults(search.input)
         .pipe(
+          catchError((err) => {
+            console.log('[Search Load] Load Search Results ERROR!!!!!', err);
+            this.messageService.add({key: 'tc', severity: 'error', summary: `${err.message}`, detail: `${err.message}`,
+            life: 7000, closable:true });
+            return EMPTY;
+          }),
           // tap(res => console.log('getResults res effect =', res)),
           map((suggestions: Location[]) => ({ type: '[Search API]  Update Search Results', suggestions })),
-          catchError(() => EMPTY)
+          catchError((err) => {
+            this.messageService.add({key: 'tc', severity: 'error', summary: `${err.message}`, detail: `${err.message}`,
+            life: 7000, closable: true });
+            return EMPTY;
+          })
         )
     )
   )
@@ -44,7 +56,11 @@ export class LocationsEffects {
         .pipe(
           tap(res => console.log('getCurrentWeather res effect =', res)),
           map((currentWeather) => ({ type: '[SelectedWeather API]  Update Current Weather', currentWeather })),
-          catchError(() => EMPTY)
+          catchError((err) => {
+            this.messageService.add({key: 'tc', severity: 'error', summary: `${err.message}`, detail: `${err.message}`,
+            life: 7000, closable: true });
+            return EMPTY;
+          })
         )
     )
   )
@@ -60,7 +76,11 @@ export class LocationsEffects {
         .pipe(
           tap(res => console.log('getForecast res effect =', res)),
           map((forecast: Forecast) => ({ type: '[SelectedWeather API]  Update Forecast', forecast })),
-          catchError(() => EMPTY)
+          catchError((err) => {
+            this.messageService.add({key: 'tc', severity: 'error', summary: `${err.message}`, detail: `${err.message}`,
+            life: 7000, closable: true });
+            return EMPTY;
+          })
         )
     )
   )
