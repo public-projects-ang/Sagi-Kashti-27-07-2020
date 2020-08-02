@@ -10,6 +10,7 @@ import {suggstionsMock} from '../../../assets/mocks/suggestions-mock';
 export class SearchService {
   // wRKjvZFhHa9EruIMEcDP445Y1BjOAAlz
   // 5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx
+  // 9VSapGOgUgtQisfD6e6lEcDGaFGzccMW
   // curl -X GET "http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx&q=jerusal"
   key = '9VSapGOgUgtQisfD6e6lEcDGaFGzccMW';
   suggstionsMock: Location[] = suggstionsMock;
@@ -22,13 +23,13 @@ export class SearchService {
     let params = new HttpParams().set('q', input);
     params = params.set('apikey', this.key);
     // tslint:disable-next-line: object-literal-shorthand
-    // return this.http.get(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete`, { params: params })
-    // .pipe(
-    //   tap(  (res: Location[]) => {
-    //     console.log('@@@@@@@@@@@@@@@@@@@@ res s = ');
-    //     console.log(res);
-    //   })
-    // );
-    return of(this.suggstionsMock);
+    return this.http.get(`https://dataservice.accuweather.com/locations/v1/cities/autocomplete`, { params: params })
+    .pipe(
+      tap(  (res: Location[]) => {
+        console.log('@@@@@@@@@@@@@@@@@@@@ res s = ');
+        console.log(res);
+      })
+    );
+    // return of(this.suggstionsMock);
   }
 }

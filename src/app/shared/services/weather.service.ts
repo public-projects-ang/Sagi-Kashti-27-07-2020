@@ -49,15 +49,15 @@ export class WeatherService {
     console.log(this.forecastRes);
     const params = new HttpParams().set('apikey', this.key);
     // tslint:disable-next-line: object-literal-shorthand
-    // return this.http.get(`https://dataservice.accuweather.com/currentconditions/v1/${location}`, { params: params }).pipe(
-    //   tap((res: Location) => {
-    //     console.log('getCurrentWeather res s = ');
-    //     console.log(res);
-    //   })
-    // );
+    return this.http.get(`https://dataservice.accuweather.com/currentconditions/v1/${location}`, { params: params }).pipe(
+      tap((res: Location) => {
+        console.log('getCurrentWeather res s = ');
+        console.log(res);
+      })
+    );
     // console.log(' this.mockListRes = ');
     // console.log(this.mockListRes);
-    return of(this.mockWeather);
+    // return of(this.mockWeather);
   }
   getForecast(location) {
     console.log(' getForecast()  a ');
@@ -66,15 +66,15 @@ export class WeatherService {
     let params = new HttpParams().set('apikey', this.key);
     params = params.set('metric', 'true');
     // tslint:disable-next-line: object-literal-shorthand
-    // return this.http.get(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location}`, { params: params }).pipe(
-    //   tap((res: Forecast) => {
-    //     console.log('getForecast res s = ');
-    //     console.log(res);
-    //   })
-    // );
+    return this.http.get(`https://dataservice.accuweather.com/forecasts/v1/daily/5day/${location}`, { params: params }).pipe(
+      tap((res: Forecast) => {
+        console.log('getForecast res s = ');
+        console.log(res);
+      })
+    );
 
     // console.log(' this.forecastRes = ');
     // console.log(this.forecastRes);
-    return of(this.forecastRes);
+    // return of(this.forecastRes);
   }
 }

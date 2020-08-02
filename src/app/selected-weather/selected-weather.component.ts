@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { WeatherService } from '../shared/services/weather.service';
 import { Store, select } from '@ngrx/store';
 import { SelectedLocationState } from '../shared/interfaces/selected-location-state';
 import { addFavorite, removeFavorite } from '../shared/ngrx/actions/locations.actions';
