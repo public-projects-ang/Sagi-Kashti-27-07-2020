@@ -5,7 +5,7 @@
  * Licensed under the MIT license - http://opensource.org/licenses/MIT
  *
  * Copyright (c) 2020 Animate.css
- */@media (prefers-reduced-motion:reduce),print{.animate__animated{-webkit-animation-duration:1ms!important;animation-duration:1ms!important;transition-duration:1ms!important;-webkit-animation-iteration-count:1!important;animation-iteration-count:1!important}.animate__animated[class*=Out]{opacity:0}}body,html{margin:0;padding:0;height:100vh;font-family:Ranchers,cursive}.row{padding:5px}.flex-center{display:flex;align-items:center;justify-content:center}body .rounded-toggle-button{border-radius:25px!important}.light-text{font-family:Caveat,cursive;font-weight:700}.text-center{text-align:center}.ui-card{box-shadow:11px 7px 11px 5px #28cb2e!important}
+ */@media (prefers-reduced-motion:reduce),print{.animate__animated{-webkit-animation-duration:1ms!important;animation-duration:1ms!important;transition-duration:1ms!important;-webkit-animation-iteration-count:1!important;animation-iteration-count:1!important}.animate__animated[class*=Out]{opacity:0}}body,html{margin:0;padding:0;height:100vh;font-family:Ranchers,cursive}.row{padding:5px}.flex-center{display:flex;align-items:center;justify-content:center}body .rounded-toggle-button{border-radius:25px!important}.light-text{font-family:Caveat,cursive;font-weight:700}.text-center{text-align:center}.ui-card{box-shadow:11px 7px 11px 5px #28cb2e!important;margin-left:2px;margin-right:2px;margin-top:7px;padding:3px}
 /*!
  * animate.css - https://animate.style/
  * Version - 4.1.0
