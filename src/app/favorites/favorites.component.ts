@@ -15,18 +15,16 @@ export class FavoritesComponent implements OnInit, OnDestroy {
   subscription: Subscription;
   constructor(private store: Store<{
     LocationState: {
-      // selectedLocation: SelectedLocationState,
       favorites: Favorite[]
     }
   }>) { }
 
   ngOnInit(): void {
-   this.subscription =  this.store.pipe(select('LocationState', 'favorites'))
-      .pipe(tap(res => { console.log('SSSSSSSSSSSfavorites updated', res) })).subscribe(
-        (favorites: Favorite[]) => {
-          this.favorites = favorites;
-        }
-      );
+    this.subscription = this.store.pipe(select('LocationState', 'favorites')).subscribe(
+      (favorites: Favorite[]) => {
+        this.favorites = favorites;
+      }
+    );
   }
   ngOnDestroy() {
     this.subscription.unsubscribe();

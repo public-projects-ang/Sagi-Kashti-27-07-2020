@@ -25,9 +25,8 @@ export const initialState: LocationState = {
 
 const locationsReducer = createReducer(
   initialState,
-  // tslint:disable-next-line: max-line-length
-  on(LocationActions.searchLoad, (state, payload) => { return ({ ...state, selected: payload.input }); }),
-  on(LocationActions.searchLoadSuccess, (state, payload) => { return ({ ...state, suggestions: payload.suggestions }); }),
+  on(LocationActions.searchLoad, (state, payload) => ({ ...state, selected: payload.input })),
+  on(LocationActions.searchLoadSuccess, (state, payload) => ({ ...state, suggestions: payload.suggestions })),
   on(LocationActions.selectedWeatherLoad, (state, payload) => {
     return ({
       ...state, selectedLocation:

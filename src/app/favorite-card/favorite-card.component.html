@@ -1,13 +1,11 @@
 
 <div id="favorite-card-container" class="flex-center animated flip" (click)="favoriteSelected($event)">
-  <!-- <p>favorite-card works!</p>
-  favorite = {{favorite|json}} -->
+
 
 
   <p-card
   styleClass="ui-card-shadow ">
  <p-header class="light-text flex-center">
-   <!-- <h1>{{favorite.dailyForecast.EpochDate * 1000 | date:'EEEE'}}</h1> -->
    <h1>{{favorite.location.LocalizedName}}</h1>
  </p-header>
  <div class="light-text flex-center">{{favorite.weather.EpochTime * 1000 | date:'longDate'}} </div>

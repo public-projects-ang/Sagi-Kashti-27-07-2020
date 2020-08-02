@@ -16,8 +16,6 @@ export class FavoriteCardComponent implements OnInit {
   ngOnInit(): void {
   }
 favoriteSelected(e) {
-  console.log('favoriteSelected ');
-  console.log(this.favorite.location);
   this.store.dispatch(selectedWeatherLoad({selectedLocation: this.favorite.location}));
   this.router.navigate(['/home'], {queryParams: {isNavigation: true}});
 }

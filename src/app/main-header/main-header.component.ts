@@ -13,8 +13,8 @@ export class MainHeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.items3 = [
-      { label: 'Info', icon: 'pi pi-fw pi-chart-bar', routerLink: 'home' },
-      { label: 'Message', icon: 'pi pi-fw pi-calendar', routerLink: 'favorites' }
+      { label: 'home', icon: 'pi pi-fw pi-home', routerLink: 'home' },
+      { label: 'favorites', icon: 'pi pi-fw pi-heart', routerLink: 'favorites' }
     ];
     this.activeItem = this.items3[0];
   }

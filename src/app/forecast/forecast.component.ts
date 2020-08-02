@@ -20,14 +20,6 @@ export class ForecastComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.store.pipe(select('LocationState', 'selectedLocation')).subscribe(
       (selectedLocationState: SelectedLocationState) => {
-        console.log('forecast selectedLocationState = ');
-        console.log(selectedLocationState);
-        // this.weatherService.getCurrentWeather(selectedLocation.Key).subscribe(
-        //   res => {
-        //     console.log(' res = ');
-        //     console.log(res);
-        //   }
-        // );
         this.selectedLocationState = selectedLocationState;
       }
     );

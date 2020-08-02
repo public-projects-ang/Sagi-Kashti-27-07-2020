@@ -27,11 +27,7 @@ export class SearchComponent implements OnInit, OnDestroy {
         this.filteredLocations = suggestions;
       }
     );
-    console.log('this.activatedRoute.snapshot.queryParams = ');
-    console.log(this.activatedRoute.snapshot.queryParams);
     if (this.activatedRoute.snapshot.queryParams && !this.activatedRoute.snapshot.queryParams.isNavigation) {
-      console.log('################################### inside this.activatedRoute.snapshot.queryParams = ');
-      console.log(this.activatedRoute.snapshot.queryParams);
       this.onLocationSelect(telAviv);
     }
   }
@@ -43,8 +39,6 @@ export class SearchComponent implements OnInit, OnDestroy {
     this.store.dispatch(searchLoad({ input }));
   }
   onLocationSelect(selectedLocation: Location) {
-    console.log('location selected = ');
-    console.log(selectedLocation);
     this.store.dispatch(selectedWeatherLoad({ selectedLocation }));
     this.locationName = `${selectedLocation.LocalizedName},${selectedLocation.Country.LocalizedName},${selectedLocation.AdministrativeArea.ID}`;
   }

@@ -53,13 +53,10 @@ export class SelectedWeatherComponent implements OnInit, OnDestroy {
   }
   removeFavorite() {
     const favorite = this.favorite();
-    // if(this.selectedLocationState.details&&this.selectedLocationState.currentWeather){
-    //   this.isFavorite = this.favoritesService.isfavoriteExist(favorite, this.favorites);
-    // }
     if (this.selectedLocationState.details.Key && this.favoritesService.isfavoriteExist(favorite, this.favorites)) {
       this.store.dispatch(removeFavorite({ favoriteKey: this.selectedLocationState.details.Key }));
     } else {
-      alert('Could not add to favorites !!');
+      alert('Could not remove from favorites !!');
     }
   }
   favorite() {
