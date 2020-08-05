@@ -7,7 +7,7 @@ import {suggstionsMock} from '../../../assets/mocks/suggestions-mock';
 })
 export class SearchService {
 
-  key = 'p7mcGBKmOHQ6Gad0QBaXD5iHGWpt4wwd';
+  key = '5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx';
   suggstionsMock: Location[] = suggstionsMock;
   constructor(private http: HttpClient) { }
   getResults(input: string) {

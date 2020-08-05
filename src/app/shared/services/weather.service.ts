@@ -10,7 +10,7 @@ import { Forecast } from '../interfaces/forecast';
   providedIn: 'root'
 })
 export class WeatherService {
-  key = 'p7mcGBKmOHQ6Gad0QBaXD5iHGWpt4wwd';
+  key = '5WQZn6KRKHepKjrGMjp8cZGlqEqIA7Hx';
   forecastRes = forecastRes;
   mockWeather: Weather[];
   constructor(private http: HttpClient) { }

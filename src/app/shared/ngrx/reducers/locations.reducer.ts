@@ -1,7 +1,6 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as LocationActions from '../actions/locations.actions';
 import { Location } from '../../interfaces/location';
-import { Weather } from '../../interfaces/weather';
 import { SelectedLocationState } from '../../interfaces/selected-location-state';
 import { Favorite } from '../../interfaces/favorite';
 
